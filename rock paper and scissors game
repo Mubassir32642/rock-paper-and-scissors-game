@@ -1,0 +1,103 @@
+#include<iostream>
+#include<stdlib.h>
+#include<ctime>
+#include<conio.h> 
+using namespace std;
+
+int main()
+{
+ 
+cout<<"          Welcome to  GAME :  " <<endl;
+string playername;
+cout<<" Enter  Name   :  " <<endl;
+cin>>playername;
+
+   
+int rounds;
+cout<<" how many rounds you want to play  " <<endl;
+cin>>rounds;
+
+int playerscore =0 ;
+
+int computerscore = 0 ;
+     int playerchoice ;
+     int computerchoice ; 
+
+for( int round=1 ; round<rounds ; round++ )
+ {   
+  
+     int playerchoice ;
+     int computerchoice ;     
+     cout<<" Round No.  " <<round   << " / " <<rounds <<endl;
+     
+
+     cout<<playername <<"'s score  =  " <<playerscore <<endl;
+ 
+     cout<<"Computer Score   =  " <<computerscore <<endl;
+     
+
+  
+     cout<<" press 1 for  ROCK  "<<endl;
+     cout<<" press 2 for  Scissor  "<<endl;
+     cout<<" press 3 for  Paper  "<<endl;
+
+     do
+     {
+     cout<<playername <<" Select your choice from given options  :  "<<endl;
+     cin>>playerchoice ;
+     } while( playerchoice != 1 && playerchoice != 2 &&  playerchoice != 3);
+    srand (time(0) );
+    computerchoice = (rand() %3 ) +1 ;
+    
+
+        
+    if( playerchoice == 1 && computerchoice==2 )
+    {
+        cout<<"Player win : " <<endl;
+        playerscore++;
+    }
+    else if( playerchoice==2 && computerchoice==3 )
+    {
+        cout<<"Player win : " <<endl;
+        playerscore++;
+    }
+     else if( playerchoice==3 && computerchoice==1 )
+    {
+        cout<<"Player win : " <<endl;
+         playerscore++;
+        
+    }
+    else if( playerchoice == computerchoice )
+    {
+         cout<<" Game  DRAW  " <<endl;
+    }
+    else 
+    {
+        cout<<"  -- COMPUTER WIN --  " <<endl;
+        computerscore++;
+ 
+    }
+     
+getch () ;
+
+}
+
+
+    if( playerscore > computerscore  )
+    {
+        cout<<" wohoo Congradulations, You Won  : " <<endl;
+        cout<<" Thanks for playing " <<endl; 
+    }
+    else if( playerscore < computerscore  )
+    {
+        cout<<" Computer Win  : " <<endl;
+        cout<<" Thanks for playing " <<endl; 
+    }
+    else if( playerscore == computerscore  )
+    {
+        cout<<" Game Is Drawn   : " <<endl;
+        cout<<" Thanks for playing " <<endl; 
+    }
+
+    return 0;
+}
